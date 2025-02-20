@@ -9,14 +9,14 @@ import SearchIcon from "./Search.svg";
 
 const API_URL = "http://www.omdbapi.com/?apikey=8ac8ab8e&";
 
-const movie1 = {
-  Title: "Ultimate Avengers II",
-  Year: "2006",
-  imdbID: "tt0803093",
-  Type: "movie",
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-};
+// const movie1 = {
+//   Title: "Ultimate Avengers II",
+//   Year: "2006",
+//   imdbID: "tt0803093",
+//   Type: "movie",
+//   Poster:
+//     "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+// };
 
 const App = () => {
   const [movies, setMovies] = useState([]);
