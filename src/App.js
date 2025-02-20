@@ -38,13 +38,18 @@ const App = () => {
       <h1>MovieLand</h1>
 
       <div className="search">
-        <input
-          placeholder="Search for movies"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <img src={SearchIcon} alt="search" onClick={() => searchMovies(searchTerm)} />
-      </div>
+  <input
+    placeholder="Search for movies"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        searchMovies(searchTerm);
+      }
+    }}
+  />
+  <img src={SearchIcon} alt="search" onClick={() => searchMovies(searchTerm)} />
+</div>
 
       {movies?.length > 0 ? (
         <div className="container">
