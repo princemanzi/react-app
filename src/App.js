@@ -20,7 +20,7 @@ const API_URL = "http://www.omdbapi.com/?apikey=8ac8ab8e&";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const searchMovies = async (title) => {
     //async means asynchronous data which means it takes time to fetch these movies.
@@ -38,23 +38,27 @@ const App = () => {
       <h1>MovieLand</h1>
 
       <div className="search">
-  <input
-    placeholder="Search for movies"
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-    onKeyDown={(e) => {
-      if (e.key === "Enter") {
-        searchMovies(searchTerm);
-      }
-    }}
-  />
-  <img src={SearchIcon} alt="search" onClick={() => searchMovies(searchTerm)} />
-</div>
+        <input
+          placeholder="Search for movies"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              searchMovies(searchTerm);
+            }
+          }}
+        />
+        <img
+          src={SearchIcon}
+          alt="search"
+          onClick={() => searchMovies(searchTerm)}
+        />
+      </div>
 
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard key={movie.imdbID} movie={movie} />
           ))}
         </div>
       ) : (
